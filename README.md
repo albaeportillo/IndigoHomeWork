@@ -39,5 +39,9 @@ You have up to 5 days to accomplish this assignment.  If you don't get through e
  A brief description describing how you went about solving the above problem.  If you were writing this as a PR, what would you write to describe what you did to your team.  A short video recording of the app working and exercising the above requirements is also helpful.
 
 ##Upgrade HomeWork Indigo
-   Implementing MVVM, Koint, Coroutines.
+Implementing MVVM, Koint, Coroutines.
+
+   Short Video IndigoAg 
+   ![](https://github.com/albaeportillo/IndigoHomeWork/blob/main/imgs/Indigo_APortillo_HomeWork.gif)
    
+By: Alba Portillo
