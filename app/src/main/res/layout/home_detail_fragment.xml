@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.indigoag.android.homework.ui.home.bids.HomeViewModel" />
+
+        <variable
+            name="bid"
+            type="com.indigoag.repository.network.bids.Bid" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <fragment
+            android:id="@+id/fragmentMap"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="0.5" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/size_16"
+            android:layout_weight="0.5"
+            android:outlineSpotShadowColor="#6464FA"
+            android:padding="0dp"
+            app:cardBackgroundColor="#FAFBFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="@dimen/size_12"
+            tools:background="#FFFFFF">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/size_24"
+                android:paddingTop="@dimen/size_20"
+                android:paddingRight="@dimen/size_24"
+                android:paddingBottom="@dimen/size_24">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/priceCardInfo"
+                    style="@style/Title_04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{bid.priceFormat()+bid.currency}"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="400$" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/facilityCardInfo"
+                    style="@style/Title_06"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/facility(bid.facility.component2())}"
+                    android:textColor="#141938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/priceCardInfo"
+                    tools:text="Facility: Obi-Wan Kenobi" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/typeCardInfo"
+                    style="@style/Paragraph_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_4"
+                    android:text="@{@string/type(bid.typeCapitalize())}"
+                    android:textColor="#141938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/facilityCardInfo"
+                    tools:text="Type: Corn" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lastUpdatedCardInfo"
+                    style="@style/Paragraph_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_4"
+                    android:text="@{@string/last_update(bid.lastUpdated)}"
+                    android:textColor="#141938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/typeCardInfo"
+                    tools:text="LastUpdatedCardInfo: " />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deliveryStartDateCardInfo"
+                    style="@style/Paragraph_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_4"
+                    android:text="@{@string/delivery_start_date(bid.deliveryStartDate)}"
+                    android:textColor="#141938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lastUpdatedCardInfo"
+                    tools:text="DeliveryStartDate: " />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.indigoag.android.homework.ui.home.bids.HomeViewModel" />
+
+        <variable
+            name="homeListAdapter"
+            type="com.indigoag.android.homework.ui.home.bids.list.HomeListAdapter" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.bids.HomeFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bgSearchLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/search"
+                style="@style/Paragraph_02"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_48"
+                android:layout_marginTop="@dimen/size_16"
+                android:layout_marginBottom="@dimen/size_16"
+                android:background="@null"
+                android:hint="@string/search_product"
+                android:imeOptions="actionSearch"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="#141938"
+                android:textColorHint="#7981B2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:hint="Search Product" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnClear"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="@dimen/size_16"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_close"
+                android:tint="#A9AFD9"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#D7DBF5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerListBids"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/size_16"
+            android:layout_marginTop="@dimen/size_16"
+            android:layout_marginEnd="@dimen/size_16"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            app:adapter="@{homeListAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bgSearchLayout"
+            tools:itemCount="40"
+            tools:listitem="@layout/row_card_bids_info"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

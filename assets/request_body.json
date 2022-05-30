@@ -1,0 +1,3 @@
+{
+  "query": "{ trips(feeds: \"OULU\") { route { longName, shortName, mode, agency { name, url } }, departureStoptime { stop { lat, lon, name } } arrivalStoptime { stop { lat, lon, name } stopSequence } bikesAllowed wheelchairAccessible tripHeadsign } }"
+}

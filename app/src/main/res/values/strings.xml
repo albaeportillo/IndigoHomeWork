@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Indigo</string>
+    <string name="google_map_key">AIzaSyDbdTeRykq1MA9QlAPLy0fQofTdoaUHsZo</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="error">"Error"</string>
+    <string name="invalid_username">Not a valid username, remember email must be @indigo</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="search_product">Search Product</string>
+    <string name="show_more">Show More</string>
+    <string name="type">Type: %1$s</string>
+    <string name="facility">Facility: %1$s</string>
+    <string name="last_update">Last Update: %1$s</string>
+    <string name="delivery_start_date">Delivery Start Date: %1$s</string>
+
+</resources>

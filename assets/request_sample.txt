@@ -1,0 +1,8 @@
+POST /routing/v1/routers/finland/index/graphql HTTP/1.1
+Host: api.digitransit.fi
+Content-Type: application/json
+Content-Length: 258
+
+{
+    "query": "{ trips(feeds: \"OULU\") { route { longName, shortName, mode, agency { name, url } }, departureStoptime { stop { lat, lon, name } } arrivalStoptime { stop { lat, lon, name } stopSequence } bikesAllowed wheelchairAccessible tripHeadsign } }"
+}

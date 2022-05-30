@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="UIKit.Button" parent="Widget.AppCompat.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="UIKit.TextButton" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">#4F4FFF</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="UIKit.Button_S" parent="UIKit.TextButton">
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

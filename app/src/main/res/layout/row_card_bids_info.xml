@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bid"
+            type="com.indigoag.repository.network.bids.Bid" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_16"
+            android:outlineSpotShadowColor="#154C79"
+            android:padding="0dp"
+            app:cardBackgroundColor="#FAFBFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="@dimen/size_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="#FFFFFF">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/size_24"
+                android:paddingTop="@dimen/size_20"
+                android:paddingRight="@dimen/size_24"
+                android:paddingBottom="@dimen/size_24">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/price"
+                    style="@style/Title_06"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{bid.priceFormat()+bid.currency}"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="400$" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleCardInfo"
+                    style="@style/Title_08"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{bid.productCapitalize()}"
+                    android:textColor="#141938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/price"
+                    tools:text="Title Product" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/subtitleCardInfo"
+                    style="@style/Paragraph_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/type(bid.typeCapitalize())}"
+                    android:textColor="#141938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleCardInfo"
+                    tools:text="Type" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/processAction"
+                    style="@style/UIKit.Button_S"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawableEnd="@drawable/ic_arrow_right_blue"
+                    android:drawablePadding="7dp"
+                    android:text="@string/show_more"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subtitleCardInfo"
+                    tools:text="Show More" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
