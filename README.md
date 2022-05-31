@@ -42,7 +42,7 @@ You have up to 5 days to accomplish this assignment.  If you don't get through e
 
 ## Upgrade HomeWork Indigo
 
-Implementing MVVM, Koint, Coroutines.   
+Implementing MVVM, Koin, Coroutines, LiveData, DataBinding.   
 Include:Login, Bid List, Bid Detail, Extras: Animation and location/mapping
 
    Short Video IndigoAg :
